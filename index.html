@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="js/crypto-js.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/normalize.min.css" />
+    <style>
+        body {
+            margin: 0;
+            padding: 50px;
+        }
+        div{
+            margin-top: 10px;
+        }
+        .button{
+            padding: 10px;
+            display: block;
+            margin:10px 0 10px 0;
+            border: solid 1px #ccc;
+            outline:none;
+        }
+        .button:active{
+            background: #fff;
+        }
+        .label{
+            min-width: 120px;
+            display: inline-block;
+        }
+        .long{
+            height: 33px;
+            width: 600px;
+        }
+        .short{
+            height: 33px;
+            width: 200px;
+        }
+        .description{
+            color: #656565;;
+            padding: 5px;
+            display: block;
+        }
+        .divideEqually{
+            width: 600px;
+            display: inline-block;
+        }
+        .redText{
+            color: #f00;
+        }
+        </style>
+    <title>Verification of Roulette</title>
+</head>
+
+<body>
+    <form>
+        <div>
+            <span class="label">Hash</span>
+            <input id="inputHash" class="long" type="text" value="51ae889e17e516d8a88e48bc244c73feb8b2bc07a87f583eb82500a0f81b1b24" />
+        </div>
+    </form>
+    <div>
+        <h1>Validation results</h1>
+        <div id="placeholder1">
+        </div>
+        <div id="placeholder2">
+            <input type="button" value="Show the previous 10 rounds" class="button" onclick="runLoop()">
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+$('form').keyup(getResult).keyup();
+</script>
